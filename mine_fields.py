@@ -5,6 +5,11 @@ def is_mine(field):
         return True
     return False
 
+def is_field_validate(field):
+    if field == '*' or field == '.':
+        return True
+    return False
+
 if __name__ == '__main__':
 
     # I/O
