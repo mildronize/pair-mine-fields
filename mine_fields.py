@@ -10,6 +10,15 @@ def is_field_validate(field):
         return True
     return False
 
+def count_mine_in_table(tabs):
+    count = 0
+    for i in range(len(tabs)):
+        for j in range(len(tabs[i])):
+            if is_mine(tabs[i][j]):
+                count += 1
+    return count
+
+
 if __name__ == '__main__':
 
     # I/O
