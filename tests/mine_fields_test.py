@@ -26,6 +26,14 @@ class isFieldValidateTest(unittest.TestCase):
         self.assertEqual( is_field_validate('C'), False)
 
 
+class ReplaceCharInStringTest(unittest.TestCase):
+
+    def test_center(self):
+        self.assertEqual( replace_char_in_string('Hello', '$' ,3), 'Hel$o')
+    def test_first(self):
+        self.assertEqual( replace_char_in_string('Hello', '$', 0), '$ello')
+    def test_last(self):
+        self.assertEqual( replace_char_in_string('Hello', '$', 4), 'Hell$')
 
 # functional test
 class CountMineInTableTest(unittest.TestCase):
@@ -35,6 +43,25 @@ class CountMineInTableTest(unittest.TestCase):
                       "...."]
         self.assertEqual( count_mine_in_table(tabs_input), 2)
 
+class MineFieldsTest(unittest.TestCase):
+    def test_mine_field1(self):
+        tabs_input = ["*...",\
+                      "..*.", \
+                      "...."]
+        tabs_expect = ["*211",\
+                       "12*1", \
+                       "0111"]
+        self.assertEqual( mine_fields(tabs_input), tabs_expect)
+
+class ConvertDotToZeroTest(unittest.TestCase):
+    def test_mine_1(self):
+        tabs_input = ["*...",\
+                      "..*.", \
+                      "...."]
+        tabs_expect = ["*000",\
+                       "00*0", \
+                       "0000"]
+        self.assertEqual( convert_dot_to_zero(tabs_input), tabs_expect)
 
 # class CountMineAroundFieldTest(unittest.TestCase):
 #

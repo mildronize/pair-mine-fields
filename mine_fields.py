@@ -10,6 +10,9 @@ def is_field_validate(field):
         return True
     return False
 
+def replace_char_in_string(string, char, position):
+   return string[:position] + char + string[position+1:]
+
 def count_mine_in_table(tabs):
     count = 0
     for i in range(len(tabs)):
@@ -18,7 +21,15 @@ def count_mine_in_table(tabs):
                 count += 1
     return count
 
+def convert_dot_to_zero(tabs):
+    for i in range(len(tabs)):
+        for j in range(len(tabs[i])):
+            if not is_mine(tabs[i][j]):
+                tabs[i] = replace_char_in_string(tabs[i],'0',j)
+    return tabs
 
+def mine_fields(tabs):
+    pass
 if __name__ == '__main__':
 
     # I/O
